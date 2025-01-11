@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Get the latest space exploration, innovation and astronomy news. Space.com celebrates humanity's ongoing expansion across the final frontier.">
+    <link rel="canonical" href="https://www.space.com">
+    <link rel="preconnect" href="https://vanilla.futurecdn.net/space" crossorigin>
+    <link rel="preconnect" href="https://bordeaux.futurecdn.net">
+    <link rel="preconnect" href="https://cdn.mos.cms.futurecdn.net">
+    <link rel="preconnect" href="https://vanilla.futurecdn.net">
+    <link rel="dns-prefetch" href="https://bordeaux.futurecdn.net">
+    <link rel="dns-prefetch" href="https://cdn.mos.cms.futurecdn.net">
+    <link rel="dns-prefetch" href="https://vanilla.futurecdn.net">
+    <link rel="dns-prefetch" href="https://slice.vanilla.futurecdn.net">
+    <link rel="dns-prefetch" href="https://sommelier.futurehybrid.tech">
+    <link rel="dns-prefetch" href="https://securepubads.g.doubleclick.net">
+    <link rel="dns-prefetch" href="https://targetemsecure.blob.core.windows.net">
+    <link rel="dns-prefetch" href="https://cdn.privacy-mgmt.com">
+    <link rel="dns-prefetch" href="https://widgets.hawk-assets.co.uk">
+    <link rel="dns-prefetch" href="https://hawk.techradar.com">
+    <link rel="dns-prefetch" href="https://cdn.jwplayer.com">
+    <link rel="dns-prefetch" href="https://cdn.taboola.com">
+    <link rel="apple-touch-icon" href="https://vanilla.futurecdn.net/space/1039083/apple-touch-icon.png">
+    <meta name="msapplication-TileColor" content="#000000">
+    <meta name="msapplication-TileImage" content="https://vanilla.futurecdn.net/space/1039083/apple-touch-icon.png">
+    <link rel="icon" href="https://vanilla.futurecdn.net/space/1039083/favicon.ico" size="16x16">
+    <link rel="icon" href="https://vanilla.futurecdn.net/space/1039083/apple-touch-icon.png" size="120x120">
+    <meta property="og:site_name" content="Space.com">
+    <meta property="og:type" content="website">
+    <meta property="article:publisher" content="https://www.facebook.com/spacecom">
+    <meta property="og:url" content="https://www.space.com">
+    <!-- [/METATAGS - critical] -->
+    <link rel="preload" as="font" href="https://vanilla.futurecdn.net/space/1039083/media/shared/fonts/OpenSans-400-Regular.woff2" type="font/woff2" crossorigin>
+    <link rel="preload" as="font" href="https://vanilla.futurecdn.net/space/1039083/media/shared/fonts/OpenSans-600-SemiBold.woff2" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css">
+    <style>
+        body {
+            background: url('https://wallpaperaccess.com/full/1586538.jpg') no-repeat center center fixed;
+            background-size: cover;
+            font-family: 'Open Sans', sans-serif;
+            color: #FFFFFF;
+            margin: 0;
+            padding: 0;
+        }
+
+        .team-section, .reviews-section {
+            margin: 2rem 0;
+            text-align: center;
+        }
+
+        .solar-h1 {
+    font-size: 2.5rem;
+    color: #ff1493; /* Dark Pink */
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    margin-bottom: 2rem;
+    font-weight: bold;
+    font-style: italic;
+}
+
+
+        .neon-card {
+            background-color: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 0;
+            margin: 20px;
+            color: #fff;
+            transition: transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 0 20px rgba(255, 0, 255, 0.5);
+            display: inline-block;
+            width: 200px;
+            height: 300px;
+            perspective: 1000px;
+            position: relative;
+        }
+
+        .neon-card-inner {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            transition: transform 0.6s;
+            transform-style: preserve-3d;
+        }
+
+        .neon-card:hover .neon-card-inner {
+            transform: rotateY(180deg);
+        }
+
+        .neon-card-front, .neon-card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border-radius: 15px;
+            overflow: hidden;
+            backface-visibility: hidden;
+        }
+
+        .neon-card-front {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+        }
+
+        .neon-card-back {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            transform: rotateY(180deg);
+            padding: 10px;
+            box-shadow: 0 0 20px rgba(255, 0, 255, 0.5);
+            color: #ff69b4; /* Pink */
+        }
+
+        .neon-card img {
+            border-radius: 10px;
+            width: 100%;
+            height: auto;
+            box-shadow: 0 0 15px rgba(255, 0, 255, 0.8);
+            transition: box-shadow 0.3s;
+        }
+
+        .neon-card img:hover {
+            box-shadow: 0 0 30px rgba(255, 0, 255, 1);
+        }
+
+        .reviews-section {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 3rem;
+        }
+
+        .review-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(15px);
+            background-image: url('https://i.pinimg.com/564x/2d/40/a1/2d40a1fcca946039a5f240e83a62e643.jpg');
+            background-size: cover;
+            border-radius: 15px;
+            width: 300px;
+            padding: 20px;
+            box-shadow: 0 4px 30px rgba(0, 0, 255, 0.2);
+            color: #fff;
+            transition: transform 0.3s, box-shadow 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .review-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 50px rgba(0, 0, 255, 0.6);
+        }
+
+        .review-card h3 {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+            font-weight: bold;
+            color: #c430ff; /* Neon Purple */
+            text-shadow: 0 0 10px #6730ff;
+        }
+
+        .review-card p {
+            font-size: 1rem;
+            margin-bottom: 1rem;
+            color: #ffd000; /* Neon Gold */
+            text-shadow: 0 0 10px #ffae00;
+        }
+
+        .logo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+}
+
+.logo-container img {
+    width: 120px;
+    margin-bottom: 1rem;
+}
+
+
+        .button-container {
+            text-align: center;
+            margin-top: 0.5rem;
+        }
+
+        .neon-button {
+            background-color: #ff00ff;
+            color: #fff;
+            border-radius: 50px;
+            padding: 10px 20px;
+            font-size: 1.2rem;
+            text-transform: uppercase;
+            text-align: center;
+            text-shadow: 0 0 10px #ff00ff, 0 0 20px #ff00ff;
+            box-shadow: 0 0 20px #ff00ff;
+            cursor: pointer;
+            transition: background-color 0.3s, box-shadow 0.3s;
+            display: inline-block;
+        }
+
+        .neon-button:hover {
+            background-color: #ff0099;
+            box-shadow: 0 0 30px #ff00ff, 0 0 50px #ff0099;
+        }
+
+        .neon-button img {
+            width: 20px;
+            vertical-align: middle;
+            margin-right: 10px;
+        }
+    </style>
+    <title>Space Travel Agency</title>
+</head>
+<body>
+
+    <!-- Team Section -->
+    <section class="team-section">
+        <div class="solar-h1">Our Team</div>
+        <div class="neon-card">
+            <div class="neon-card-inner">
+                <div class="neon-card-front">
+                    <img src="https://img.freepik.com/premium-photo/portrait-handsome-white-guy-image-generated-by-ai_803126-1310.jpg" alt="Team Member 1">
+                    <div class="description">Adrian Bayer - Developer</div>
+                </div>
+                <div class="neon-card-back">
+                    <p>Came up with the idea of Solar. Nowadays both a designer and a developer. Would very much like to visit low orbit some day</p>
+                </div>
+            </div>
+        </div>
+        <div class="neon-card">
+            <div class="neon-card-inner">
+                <div class="neon-card-front">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTLoBQuD3m4Giu9VXFArjI4UpY42r1tYx1Djw&sand" alt="Team Member 2">
+                    <div class="description">Tamako Kanroji - Designer</div>
+                </div>
+                <div class="neon-card-back">
+                    <p>Was the first to make real programming for Solar. Our celestial calculations guru. Also interested in deciphering the universal number 42.</p>
+                </div>
+            </div>
+        </div>
+        <div class="neon-card">
+            <div class="neon-card-inner">
+                <div class="neon-card-front">
+                    <img src="https://img.freepik.com/premium-photo/portrait-handsome-white-guy-image-generated-by-ai_803126-1310.jpg" alt="Team Member 3">
+                    <div class="description">Martin Krištof - Astronomer</div>
+                </div>
+                <div class="neon-card-back">
+                    <p>Marketing strategist, does all the neat things that make our Solar online tick. Would like to talk with HAL 9000 about life priority.</p>
+                </div>
+            </div>
+        </div>
+        <div class="neon-card">
+            <div class="neon-card-inner">
+                <div class="neon-card-front">
+                    <img src="https://img.freepik.com/premium-photo/photo-25-year-old-german-business-man-smiling-brown-hair-full-body-standing-office_935552-1252.jpg" alt="Team Member 4">
+                    <div class="description">Gabriel Okša - Engineer</div>
+                </div>
+                <div class="neon-card-back">
+                    <p>He is a researcher in the field of parallel numerical linear algebra. Besides mathematics, his interests include astronomy, growing cacti and orchids, and playing piano (especially the compositions of Chopin).</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reviews Section -->
+    <section class="reviews-section">
+        <div class="review-card">
+            <h3>John Doe</h3>
+            <p>"Amazing experience! The service was top-notch, and the views were out of this world. Highly recommended!"</p>
+        </div>
+        <div class="review-card">
+            <h3>Jane Smith</h3>
+            <p>"A journey I'll never forget. The professionalism and care from the team were unparalleled."</p>
+        </div>
+        <div class="review-card">
+            <h3>Michael Johnson</h3>
+            <p>"From start to finish, everything was perfect. The space travel agency exceeded all expectations!"</p>
+        </div>
+        <div class="review-card">
+            <h3>Emily Davis</h3>
+            <p>"The best space travel experience. The staff was friendly, and the views of Earth from space were breathtaking."</p>
+        </div>
+        <div class="review-card">
+            <h3>James Wilson</h3>
+            <p>"A once-in-a-lifetime adventure! The attention to detail and safety was impressive. Highly recommend!"</p>
+        </div>
+        <div class="review-card">
+            <h3>Sophia Brown</h3>
+            <p>"Unforgettable! The trip was well-organized, and the experience was out of this world. A must for space enthusiasts!"</p>
+        </div>
+        <div class="review-card">
+            <h3>Liam Martinez</h3>
+            <p>"The crew was incredibly knowledgeable, and the journey was smooth and exciting. Worth every penny!"</p>
+        </div>
+        <div class="review-card">
+            <h3>Olivia Garcia</h3>
+            <p>"Incredible experience! I felt safe and well-cared for throughout the entire trip. The views were indescribable."</p>
+        </div>
+    </section>
+
+        <!-- Logo and Call to Action -->
+        <div class="logo-container" style="text-align: center; margin-top: 2rem;">
+            <img src="https://pics.craiyon.com/2023-06-05/d4a3b2bfb8544feb8a2dada08bce522d.webp" alt="ConstellaX Logo" style="width: 100px;">
+        </div>
+    
+        <div class="button-container" style="text-align: center; margin-top: 1rem;">
+            <a href="#" class="neon-button">
+                Visit our App: CosmoCrusade
+            </a>
+        
+    
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Function to handle navigation to the ConstellaX app
+            function visitApp() {
+                window.location.href = "https://yourappurl.com"; // Replace with actual app URL
+            }
+
+            // Attach event listener to the neon button for visiting the app
+            const neonButton = document.querySelector('.neon-button');
+            neonButton.addEventListener('click', visitApp);
+
+            // Additional button interactions can be added here
+            const scrollToReviewsButton = document.querySelector('.scroll-to-reviews');
+            if (scrollToReviewsButton) {
+                scrollToReviewsButton.addEventListener('click', function () {
+                    document.querySelector('.reviews-section').scrollIntoView({ behavior: 'smooth' });
+                });
+            }
+
+            const scrollToTeamButton = document.querySelector('.scroll-to-team');
+            if (scrollToTeamButton) {
+                scrollToTeamButton.addEventListener('click', function () {
+                    document.querySelector('.team-section').scrollIntoView({ behavior: 'smooth' });
+                });
+            }
+
+            const reviewCards = document.querySelectorAll('.review-card');
+            reviewCards.forEach(card => {
+                card.addEventListener('mouseover', function () {
+                    card.style.boxShadow = '0 8px 50px rgba(0, 0, 255, 0.8)';
+                });
+
+                card.addEventListener('mouseout', function () {
+                    card.style.boxShadow = '0 4px 30px rgba(0, 0, 255, 0.2)';
+                });
+            });
+        });
+    </script>
+</body>
+</html>
