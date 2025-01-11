@@ -1,0 +1,208 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pricing Table</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+        integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap">
+
+    <style>
+        * {
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background-image: url('https://i.pinimg.com/564x/8a/4d/62/8a4d62eb4039dcd3d9d893a0d43999df.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            display: flex;
+            justify-content: center;
+            color: white;
+            margin: 0;
+            padding: 0;
+        }
+
+        main {
+            background-color: rgba(0, 0, 0, 0.7);
+            text-align: center;
+            width: 90%;
+            margin-top: 20px;
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+        }
+
+        .text {
+            padding: 20px;
+        }
+
+        .text p {
+            opacity: 0.8;
+        }
+
+        .cardSection {
+            display: grid;
+            grid-template-columns: repeat(1, 1fr);
+            justify-items: center;
+            padding: 20px;
+            gap: 25px;
+        }
+
+        .card {
+            background-color: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            padding: 20px;
+            border-radius: 15px;
+            width: 100%;
+            max-width: 550px;
+            transition: transform 0.3s, background-color 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+
+        .title {
+            font-size: 2em;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .title i {
+            margin-right: 10px;
+        }
+
+        .options ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .options ul li {
+            margin: 10px 0;
+            opacity: 0.9;
+        }
+
+        .pricing {
+            margin-top: 10px;
+        }
+
+        .pricing h3 {
+            margin: 0;
+        }
+
+        .pricing span {
+            font-size: 0.8em;
+            opacity: 0.7;
+        }
+
+        .btn--choose {
+            background-color: rgba(57, 232, 63, 0.6);
+            border: none;
+            padding: 10px 20px;
+            border-radius: 10px;
+            cursor: pointer;
+            color: rgba(79, 57, 157, 0.9);
+            font-size: 1.2em;
+            font-weight: 800;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .btn--choose:hover {
+            background-color: #39e83f;
+            color: white;
+        }
+
+        @media (min-width: 768px) {
+            .cardSection {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            .card {
+                min-width: 280px;
+                height: auto;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <div class="text">
+            <h1>Choose the right <b>plan</b> for your space journey</h1>
+            <p>All plans include a <strong>30-day free trial</strong></p>
+        </div>
+        <div class="cardSection">
+            <div class="card">
+                <div class="title">
+                    <i class="fa-solid fa-rocket"></i>
+                    Basic
+                </div>
+                <p>Essential tools for your space journey</p>
+                <div class="options">
+                    <ul class="fa-ul">
+                        <li><span class="fa-li"><i class="fa-solid fa-circle-check"></i></span> <b>Space Shuttle Access:</b> Basic shuttle suitable for short missions.</li>
+                        <li><span class="fa-li"><i class="fa-solid fa-circle-check"></i></span> <b>Standard Food Pack:</b> Nutritional meals designed for space conditions.</li>
+                        <li><span class="fa-li"><i class="fa-solid fa-circle-check"></i></span> <b>Standard Space Helmet:</b> Provides basic protection for short durations.</li>
+                        <li><span class="fa-li"><i class="fa-solid fa-circle-check"></i></span> <b>Basic Communications Kit:</b> Standard communication tools for basic needs.</li>
+                    </ul>
+                </div>
+                <div class="pricing">
+                    <h3>Free for 2 months, then $100/month</h3>
+                </div>
+                <button class="btn--choose btn" onclick="selectBtn()">Choose</button>
+            </div>
+            <div class="card">
+                <div class="title">
+                    <i class="fa-solid fa-space-shuttle"></i>
+                    Pro
+                </div>
+                <p>Advanced tools and features</p>
+                <div class="options">
+                    <ul class="fa-ul">
+                        <li><span class="fa-li"><i class="fa-solid fa-circle-check"></i></span> <b>Advanced Space Shuttle:</b> More spacious and equipped for longer missions.</li>
+                        <li><span class="fa-li"><i class="fa-solid fa-circle-check"></i></span> <b>Gourmet Food Pack:</b> High-quality meals with enhanced nutritional value.</li>
+                        <li><span class="fa-li"><i class="fa-solid fa-circle-check"></i></span> <b>Enhanced Space Helmet:</b> Improved protection with extended functionality.</li>
+                        <li><span class="fa-li"><i class="fa-solid fa-circle-check"></i></span> <b>Space Tools Kit:</b> Essential tools for basic repairs and maintenance.</li>
+                        <li><span class="fa-li"><i class="fa-solid fa-circle-check"></i></span> <b>Advanced Communication Kit:</b> Includes satellite communication capabilities.</li>
+                    </ul>
+                </div>
+                <div class="pricing">
+                    <h3>$200 <span>/month</span></h3>
+                </div>
+                <button class="btn--choose btn" onclick="selectBtn()">Choose</button>
+            </div>
+            <div class="card">
+                <div class="title">
+                    <i class="fa-solid fa-user-astronaut"></i>
+                    Premium
+                </div>
+                <p>All-inclusive space travel experience</p>
+                <div class="options">
+                    <ul class="fa-ul">
+                        <li><span class="fa-li"><i class="fa-solid fa-circle-check"></i></span> <b>Luxury Space Shuttle:</b> Top-of-the-line shuttle with maximum comfort and advanced technology.</li>
+                        <li><span class="fa-li"><i class="fa-solid fa-circle-check"></i></span> <b>Deluxe Food Pack:</b> Gourmet meals with a wide variety of options.</li>
+                        <li><span class="fa-li"><i class="fa-solid fa-circle-check"></i></span> <b>Custom Space Suit and Helmet:</b> Tailored to fit with state-of-the-art features.</li>
+                        <li><span class="fa-li"><i class="fa-solid fa-circle-check"></i></span> <b>Advanced Space Tools Kit:</b> Comprehensive tools for all repair and maintenance needs.</li>
+                        <li><span class="fa-li"><i class="fa-solid fa-circle-check"></i></span> <b>Priority Launch Scheduling:</b> Priority access to launch windows and scheduling.</li>
+                        <li><span class="fa-li"><i class="fa-solid fa-circle-check"></i></span> <b>Premium Communication Kit:</b> Best-in-class communication systems with global coverage.</li>
+                    </ul>
+                </div>
+                <div class="pricing">
+                    <h3>$450 <span>/month</span></h3>
+                </div>
+                <button class="btn--choose btn" onclick="selectBtn()">Choose</button>
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>

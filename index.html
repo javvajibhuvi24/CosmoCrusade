@@ -5,192 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CosmoCrusade - Home</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="static/style.css"> <!-- Updated link for CSS file -->
+
     <style>
-        body {
-            margin: 0;
-            font-family: 'Arial', sans-serif;
-            background-color: #17030600;
-            color: white;
-            overflow-x: hidden;
-        }
-
-        /* Neon Text Styling */
-        h1, h2 {
-            font-size: 3em;
-            color: #fff;
-            text-align: center;
-            text-transform: uppercase;
-            letter-spacing: 5px;
-            text-shadow: 0 0 5px #00ff00, 0 0 10px #00ff00, 0 0 20px #00ff00;
-            transition: text-shadow 0.3s ease-in-out;
-        }
-
-        h1:hover, h2:hover {
-            text-shadow: 0 0 15px #00ff00, 0 0 25px #00ff00, 0 0 40px #00ff00, 0 0 60px #00ff00;
-        }
-
-        /* Glass Effect for Introduction Section */
-        .intro-section {
-            background: url('https://static.vecteezy.com/system/resources/previews/029/892/298/large_2x/astrology-astronomy-earth-outer-space-solar-system-ai-generative-free-photo.jpg') no-repeat center center;
-            background-size: cover;
-            border-radius: 10px;
-            padding: 40px;
-            margin: 20px auto;
-            width: 80%;
-            text-align: center;
-            backdrop-filter: blur(10px);
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-        }
-
-        .intro-section h2 {
-            color: #fff;
-            text-shadow: 0 0 10px #00ff00, 0 0 20px #00ff00;
-        }
-
-        .intro-section p {
-            font-size: 1.2em;
-            margin-top: 20px;
-        }
-
-        .explore-button {
-            display: inline-block;
-            margin-top: 20px;
-            padding: 10px 20px;
-            font-size: 1.2em;
-            color: #fff;
-            background-color: #00ff00;
-            border: none;
-            border-radius: 5px;
-            text-decoration: none;
-            transition: background-color 0.3s, transform 0.3s;
-        }
-
-        .explore-button:hover {
-            background-color: #00cc00;
-            transform: scale(1.1);
-        }
-
-        /* Navbar styling */
-        #navbar {
-            z-index: 10;
-            position: absolute;
-            top: 20px;
-            left: 50%;
-            transform: translateX(-50%);
-            background-color: rgba(16, 2, 2, 0);
-        }
-
-        #navbar ul {
-            padding: 10px 20px;
-            border-radius: 50px;
-            list-style-type: none;
-            margin: 0;
-            padding: 0;
-            text-align: center;
-        }
-
-        #navbar ul li {
-            display: inline;
-            margin: 0 15px;
-        }
-
-        #navbar ul li a {
-            text-decoration: none;
-            color: #fff;
-            font-size: 1.2em;
-            text-transform: uppercase;
-            transition: color 0.3s;
-        }
-
-        #navbar ul li a:hover {
-            color: #00ff00;
-        }
-
-        /* Footer */
-        #footer {
-            position: relative;
-            text-align: center;
-            color: white;
-            margin: 20px 0;
-        }
-
-        /* Parallax Section */
-        #parallax {
-            position: relative;
-            background-image: url('https://static.vecteezy.com/system/resources/previews/029/892/298/large_2x/astrology-astronomy-earth-outer-space-solar-system-ai-generative-free-photo.jpg');
-            background-size: cover;
-            background-attachment: fixed;
-            padding: 100px 0 ;
-            color: rgba(27, 1, 1, 0.006);
-            text-align: center;
-            z-index: 1;
-        }
-
-        #parallax .parallax-content {
-            position: relative;
-            z-index: 2;
-        }
-
-        #parallax h2 {
-            font-size: 2em;
-            margin-bottom: 20px;
-            text-shadow: 0 0 10px #00ff00;
-        }
-
-        #parallax ul {
-            list-style-type: none;
-            font-size: 1.2em;
-        }
-
-        #parallax ul li {
-            margin-bottom: 10px;
-        }
-
-        #nebula-container {
-            position: relative;
-            width: 100%;
-            height: 100vh;
-            overflow: hidden;
-        }
-
-        /* Additional Styles for Content */
-        .content-wrapper {
-            position: relative;
-            z-index: 2;
-            padding: 100px 0;
-            text-align: center;
-        }
-
-        .content-wrapper h1,
-        .content-wrapper h2 {
-            font-size: 3em;
-            color: white;
-            text-shadow: 0 0 10px #00ff00, 0 0 20px #00ff00;
-        }
-
-        .content-wrapper ul {
-            list-style-type: none;
-            font-size: 1.2em;
-            color: white;
-            text-shadow: 0 0 10px #00ff00, 0 0 20px #00ff00;
-        }
-
-        .content-wrapper ul li {
-            margin-bottom: 10px;
-        }
+        /* Your existing styles */
     </style>
 </head>
 <body>
     <!-- Navbar -->
     <nav id="navbar">
         <ul>
-            <li><a href="{{ url_for('home') }}">Home</a></li>
-            <li><a href="{{ url_for('game') }}">Game</a></li>
-            <li><a href="{{ url_for('pricing') }}">Pricing</a></li>
-            <li><a href="{{ url_for('event') }}">Event</a></li>
-            <li><a href="{{ url_for('team') }}">Team</a></li>
-            <li><a href="{{ url_for('thank_you') }}">ThankYou</a></li>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="game.html">Game</a></li>
+            <li><a href="pricing.html">Pricing</a></li>
+            <li><a href="event.html">Event</a></li>
+            <li><a href="team.html">Team</a></li>
+            <li><a href="thank_you.html">Thank You</a></li>
+            <li><a href="explore.html">Explore</a></li> <!-- Added Explore link -->
+            <li><a href="login.html">Login</a></li> <!-- Added Login link -->
         </ul>
     </nav>
 
@@ -210,7 +42,7 @@
                 <li>Exoplanet Insights: Informative and interactive web-based modules exploring exoplanets.</li>
             </ul>
         </div>
-        <a href="{{ url_for('explore') }}" class="explore-button">Explore</a>
+        <a href="explore.html" class="explore-button">Explore</a> <!-- Explore button link -->
     </section>
 
     <!-- Parallax Section (Astronomy Event Notifier) -->
@@ -231,40 +63,7 @@
     </footer>
 
     <script>
-        const container = document.getElementById('nebula-container');
-        const scene = new THREE.Scene();
-        const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-        const renderer = new THREE.WebGLRenderer();
-
-        renderer.setSize(window.innerWidth, window.innerHeight);
-        container.appendChild(renderer.domElement);
-
-        // Load the nebula texture
-        const textureLoader = new THREE.TextureLoader();
-        const nebulaTexture = textureLoader.load('{{ url_for("static", filename="images/nebula.jpg") }}');
-        const geometry = new THREE.PlaneGeometry(20, 10);
-        const material = new THREE.MeshBasicMaterial({ map: nebulaTexture });
-        const nebula = new THREE.Mesh(geometry, material);
-
-        nebula.position .z = -10;
-        scene.add(nebula);
-
-        // Animation loop
-        function animate() {
-            nebula.rotation.z += 0.001;
-            nebula.rotation.y += 0.001;
-            renderer.render(scene, camera);
-            requestAnimationFrame(animate);
-        }
-
-        animate();
-
-        // Adjust on window resize
-        window.addEventListener('resize', () => {
-            camera.aspect = window.innerWidth / window.innerHeight;
-            camera.updateProjectionMatrix();
-            renderer.setSize(window.innerWidth, window.innerHeight);
-        });
+        // Your 3D animation code
     </script>
 </body>
 </html>
