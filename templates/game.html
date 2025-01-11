@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Solar Quiz Game</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      font-family: Arial, sans-serif;
+      background: url('https://img.freepik.com/premium-photo/space-wallpaper-banner-background-stunning-view-cosmic-generative-ai-aig15_31965-183408.jpg') no-repeat center center fixed;
+      background-size: cover; /* Ensures the image covers the entire background */
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Main Content -->
+  <div style="
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    height: 100vh; 
+    padding: 20px;">
+
+    <!-- Left: Quiz Container -->
+    <div style="
+      background: rgba(0, 0, 0, 0); /* Semi-transparent background for better readability */
+      color: white; 
+      padding: 20px; 
+      border-radius: 10px; 
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0); 
+      width: 40%; 
+      text-align: center;">
+      <h1 style="margin-top: 0;">Solar System Quiz</h1>
+      <div id="question-container">
+        <p id="question">What is the largest planet in our solar system?</p>
+      </div>
+      <div id="options">
+        <button onclick="checkAnswer('A')" style="background-color: #574caf; border: none; color: white; padding: 10px; margin: 5px; cursor: pointer; border-radius: 5px; width: 100%;">A. Earth</button>
+        <button onclick="checkAnswer('B')" style="background-color: #574caf; border: none; color: white; padding: 10px; margin: 5px; cursor: pointer; border-radius: 5px; width: 100%;">B. Jupiter</button>
+        <button onclick="checkAnswer('C')" style="background-color: #574caf; border: none; color: white; padding: 10px; margin: 5px; cursor: pointer; border-radius: 5px; width: 100%;">C. Mars</button>
+        <button onclick="checkAnswer('D')" style="background-color: #574caf; border: none; color: white; padding: 10px; margin: 5px; cursor: pointer; border-radius: 5px; width: 100%;">D. Venus</button>
+      </div>
+      <div id="result" style="margin-top: 10px; font-size: 18px;"></div>
+      <div id="score" style="margin-top: 20px; font-size: 18px;">Score: 0</div>
+    </div>
+
+    <!-- Right: Pie Chart -->
+    <div style="
+      background: rgba(0, 0, 0, 0); /* Semi-transparent background for better readability */
+      color: white; 
+      padding: 20px; 
+      border-radius: 10px; 
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0); 
+      width: 40%; 
+      display: flex; 
+      justify-content: center; 
+      align-items: center;">
+      <canvas id="pieCanvas" width="200" height="200"></canvas>
+    </div>
+
+  </div>
+
+  <!-- JavaScript Logic -->
+  <script>
+    let score = 0;
+    let currentQuestionIndex = 0;
+
+    const questions = [
+      {
+        question: "What is the largest planet in our solar system?",
+        options: ["Earth", "Jupiter", "Mars", "Venus"],
+        correctAnswer: "B"
+      },
+      {
+        question: "Which planet is known as the Red Planet?",
+        options: ["Earth", "Jupiter", "Mars", "Venus"],
+        correctAnswer: "C"
+      },
+      
+      {
+        question: "What is the closest planet to the Sun?",
+        options: ["Earth", "Mercury", "Venus", "Mars"],
+        correctAnswer: "B"
+      }
+    ];
+
+    // Pie Chart Initialization
+    const ctx = document.getElementById("pieCanvas").getContext("2d");
+    const pieChart = new Chart(ctx, {
+      type: "pie",
+      data: {
+        labels: ["Correct Answers", "Remaining"],
+        datasets: [{
+          data: [0, questions.length],
+          backgroundColor: ["#4CAF50", "#cccccc"],
+        }]
+      },
+      options: { responsive: true, plugins: { legend: { position: "bottom" } } }
+    });
+
+    function checkAnswer(selectedOption) {
+      const resultContainer = document.getElementById("result");
+      const scoreContainer = document.getElementById("score");
+
+      if (selectedOption === questions[currentQuestionIndex].correctAnswer) {
+        resultContainer.textContent = "Correct!";
+        score++;
+        updatePieChart();
+      } else {
+        resultContainer.textContent = "Wrong!";
+      }
+
+      scoreContainer.textContent = "Score: " + score;
+      setTimeout(loadNextQuestion, 1000);
+    }
+
+    function updatePieChart() {
+      pieChart.data.datasets[0].data = [score, questions.length - score];
+      pieChart.update();
+    }
+
+    function loadNextQuestion() {
+      currentQuestionIndex++;
+      if (currentQuestionIndex >= questions.length) {
+        document.getElementById("question-container").innerHTML = "<p>Quiz Finished!</p>";
+        document.getElementById("options").style.display = "none";
+      } else {
+        const questionData = questions[currentQuestionIndex];
+        document.getElementById("question").textContent = questionData.question;
+        const buttons = document.querySelectorAll("#options button");
+        buttons.forEach((button, index) => {
+          button.textContent = String.fromCharCode(65 + index) + ". " + questionData.options[index];
+        });
+      }
+    }
+  </script>
+</body>
+</html>
